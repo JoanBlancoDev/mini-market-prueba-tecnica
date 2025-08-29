@@ -1,0 +1,14 @@
+[
+  { "name": "Guantes GN102", "price": 59.9, "isAvailable": true, "category": "gloves", "image": "https://0iw7abmji4.ufs.sh/f/iPYIoBQP0AEvy6mtTQKsKaQuxl9zHc2OqMEUZrimIJkfWghL" },
+  { "name": "Casco CS433", "price": 79.9, "isAvailable": false, "category": "headgear", "image": "https://0iw7abmji4.ufs.sh/f/iPYIoBQP0AEvZ5pQd2wMjEPIbZ69wVkJB4K0h8euNHmgyRLW" },
+  { "name": "Bolsa AC990", "price": 24.5, "isAvailable": true, "category": "bag", "image": "https://0iw7abmji4.ufs.sh/f/iPYIoBQP0AEvZ1CTvqwMjEPIbZ69wVkJB4K0h8euNHmgyRLW" },
+  { "name": "Espaldera S1", "price": 120.0, "isAvailable": true, "category": "headgear", "image": "https://0iw7abmji4.ufs.sh/f/iPYIoBQP0AEvK1odhrUGo54TWDlIkusMcFRd8agQ0iCPJVhS" },
+  { "name": "Guantes de Boxeo", "price": 45.5, "isAvailable": true, "category": "gloves", "image": "https://0iw7abmji4.ufs.sh/f/iPYIoBQP0AEvgtkua1m5lCtAeFVpqLfZvQKduwsWPDYcyGE2" },
+  { "name": "Casco de Rugby R7", "price": 95.0, "isAvailable": false, "category": "headgear", "image": "https://0iw7abmji4.ufs.sh/f/iPYIoBQP0AEv3caRcpeJQ2EmHYnKWP1qzw5Rc80MBLZDlITj" },
+  { "name": "Mochila Deportiva X", "price": 88.75, "isAvailable": true, "category": "bag", "image": "https://0iw7abmji4.ufs.sh/f/iPYIoBQP0AEv6UQZ0Fj5GI9M32cP6YBNnlLvbsyhuOSoJjFx" },
+  { "name": "Guantes de Ciclismo", "price": 32.0, "isAvailable": true, "category": "gloves", "image": "https://0iw7abmji4.ufs.sh/f/iPYIoBQP0AEvFa0v1WL5E3erV04yjkHXT6ulMtQLdSxhwD7R" },
+  { "name": "Bolsa de Gimnasio", "price": 55.0, "isAvailable": true, "category": "bag", "image": "https://0iw7abmji4.ufs.sh/f/iPYIoBQP0AEvGGhylMXSCsFHOVuXqZDcLm4fdANb95RpI1vh" },
+  {  "name": "Casco de Béisbol", "price": 110.0, "isAvailable": false, "category": "headgear", "image": "https://0iw7abmji4.ufs.sh/f/iPYIoBQP0AEvON6VG57ypGR4qbL0Nidn5lDPtBIgSAZcfThW" },
+  {  "name": "Guantes de Portero", "price": 65.0, "isAvailable": true, "category": "gloves", "image": "https://0iw7abmji4.ufs.sh/f/iPYIoBQP0AEvBSF9TcE9NH8X6mbfwQCe0I3JyxZjBk7YiPWo" },
+  {  "name": "Bolsa de Viaje Pro", "price": 150.0, "isAvailable": true, "category": "bag", "image": "URL_UPLOADTHING_PRODUCTO_12" }
+]

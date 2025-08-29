@@ -1,0 +1,9 @@
+# Directorios de dependencias
+node_modules/
+# Archivos de build
+dist/
+# Variables de entorno
+*.env
+!.env.template
+# Logs
+npm-debug.log
