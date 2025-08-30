@@ -98,19 +98,20 @@ export const getProductById = async (req: Request, res: Response) => {
 
 export const getCheapestProducts = async (req: Request, res: Response) => {
   try {
+    console.log('first')
     const top = Number(req.query.top) || 3;
 
     const availableProducts = await ProductModel.find({ isAvailable: true });
-
+    console.log(availableProducts);
     availableProducts.sort((a, b) => a.price - b.price);
 
     const cheapest = availableProducts.slice(0, top);
 
     res.json({ data: cheapest });
   } catch (error) {
-      console.log(error);
-    res.status(500).json({ 
-        error: "Error interno del servidor"
+    console.log(error);
+    res.status(500).json({
+      error: "Error interno del servidor",
     });
   }
 };

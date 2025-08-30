@@ -3,7 +3,7 @@ import { getAllProducts, getProductById, getCheapestProducts } from "../controll
 
 const router = Router();
 // 3 mas baratos
-router.get('/cheapest', getCheapestProducts);
+router.get('/cheapest/top', getCheapestProducts);
 
 // Productos
 router.get("/", getAllProducts);
