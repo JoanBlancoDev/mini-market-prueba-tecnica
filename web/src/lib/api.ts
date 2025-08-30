@@ -43,3 +43,17 @@ export async function getProductById(id: string) : Promise<ProductResponse> {
   }
   return res.json();
 }
+
+export async function getCheapestProducts(top: number = 3): Promise<ProductsResponse> {
+  const url = `${API_URL}/cheapest?top=${top}`;
+  
+  const res = await fetch(url);
+  
+  if (!res.ok) {
+    console.log(res)
+    throw new Error('Error al obtener los productos más baratos');
+  }
+
+  const result = await res.json();
+  return result;
+}

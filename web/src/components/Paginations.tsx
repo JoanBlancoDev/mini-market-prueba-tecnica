@@ -10,34 +10,35 @@ interface Props {
   limit: number;
 }
 
-export const Paginations: React.FC<Props> = ({ pages, limit }) => {
+export const Paginations: React.FC<Props> = ({ pages, limit = 10 }) => {
   const searchParams = useSearchParams();
   const currentPage = Number(searchParams.get("page")) || 1;
   const { handleSelectChange } = useFilters();
   const pageNumbers = Array.from({ length: pages }, (_, i) => i + 1);
-
+  
   return (
     <div className="flex justify-center w-full py-4">
-        <div className=" mr-8  flex items-center gap-2 grow-1">
+      <div className=" mr-8  flex items-center gap-2 grow-1">
         <span>Limite actual: {limit}</span>
-      <select
-        name="limit"
-        id="limit"
-        defaultValue={searchParams.get("limit") || ""}
-        onChange={handleSelectChange}
-        className="outline rounded-md px-4 py-2 w-full max-w-[120px] cursor-pointer"
-      >
-        <option value="5">5</option>
-        <option value="10">10</option>
-        <option value="15">15</option>
-      </select>
-        </div>
+        <select
+          name="limit"
+          id="limit"
+          value={String(searchParams.get("limit")) || ""}
+          onChange={handleSelectChange}
+          className="outline rounded-md px-4 py-2 w-full max-w-[120px] cursor-pointer"
+        >
+          <option value="">Elegir</option>
+          <option value={5}>5</option>
+          <option value={10}>10</option>
+          <option value={15}>15</option>
+        </select>
+      </div>
       <nav
         aria-label="Pagination"
         className="isolate inline-flex -space-x-px rounded-md"
       >
         <Link
-          href={`?page=${currentPage - 1}`}
+          href={`?page=${currentPage - 1}&limit=${limit}`}
           className={clsx("flex justify-center items-center", {
             "pointer-events-none opacity-50": currentPage === 1,
             "": currentPage !== 1,
@@ -61,7 +62,7 @@ export const Paginations: React.FC<Props> = ({ pages, limit }) => {
         {pageNumbers.map((p) => (
           <Link
             key={p}
-            href={`?page=${p}`}
+            href={`?page=${p}&limit=${limit}`}
             className={clsx(
               " relative inline-flex items-center px-4 py-2 text-sm font-semibold focus:z-20 focus-visible:outline focus-visible:outline-offset-2 hover:bg-gray-100 hover:text-zinc-800 transition-colors",
               {
@@ -76,7 +77,7 @@ export const Paginations: React.FC<Props> = ({ pages, limit }) => {
         ))}
 
         <Link
-          href={`?page=${currentPage + 1}`}
+          href={`?page=${currentPage + 1}&limit=${limit}`}
           className={clsx("flex justify-center items-center", {
             "pointer-events-none opacity-50 ": currentPage === pages,
             "": currentPage !== pages,
