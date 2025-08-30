@@ -45,8 +45,8 @@ export async function getProductById(id: string) : Promise<ProductResponse> {
 }
 
 export async function getCheapestProducts(top: number = 3): Promise<ProductsResponse> {
-  const url = `${API_URL}/cheapest?top=${top}`;
-  
+  const url = `${API_URL}/products/cheapest/top?${top}`
+  console.log(url)
   const res = await fetch(url);
   
   if (!res.ok) {

@@ -5,20 +5,23 @@ import { Product } from "@/shared/types";
 import clsx from "clsx";
 interface Props {
   products: Product;
+  className ?: string;
+  imgWidht ?: number;
+  imgHeight ?: number;
 }
-export const ProductCard = ({ products }: Props) => {
+export const ProductCard = ({ products, className, imgHeight = 200, imgWidht = 200 }: Props) => {
   const { id, category, image, isAvailable, name, price } = products;
   return (
     <>
       <Link
         href={`/products/${id}`}
-        className="flex flex-col shadow-md rounded-md lg:hover:scale-105 duration-500 ease-in-out transition-all lg:hover:opacity-80"
+        className={`${className} flex flex-col shadow-md rounded-md lg:hover:scale-105 duration-500 ease-in-out transition-all lg:hover:opacity-80`}
       >
         <div className="p-4 flex justify-center items-center">
           <Image
             priority
-            width={200}
-            height={200}
+            width={imgWidht}
+            height={imgHeight}
             src={image}
             className="block aspect-square"
             alt={`${name}-card-image`}

@@ -74,13 +74,14 @@ export default function ProductsPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {cheapest.length > 0 ? (
               cheapest.map((product) => (
-                <ProductCard key={product.id} products={product} />
+                <ProductCard imgHeight={80} imgWidht={100} className="h-[300px]" key={product.id} products={product} />
               ))
             ) : (
               <p>No hay productos disponibles.</p>
             )}
           </div>
         </div>
+        <div className="w-full h-[1px] bg-zinc-200 rounded-md"/>
         <div className="w-full py-2 grid grid-responsive cursor-pointer gap-[16px]">
           {loading ? (
             new Array(8)
