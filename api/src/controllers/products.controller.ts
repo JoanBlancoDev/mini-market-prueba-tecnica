@@ -1,11 +1,8 @@
-import { Router, Request, Response } from "express";
-import { ProductQueryParams } from "./types";
-import ProductModel from "./models/ProductModel";
+import { Response, Request } from "express";
+import ProductModel from "../models/ProductModel";
+import { ProductQueryParams } from "../types";
 
-const router = Router();
-
-// Productos
-router.get("/", async (req, res: Response) => {
+export const getAllProducts = async (req: Request, res: Response) => {
   const { search, sort, order, page, limit, available }: ProductQueryParams =
     req.query;
 
@@ -72,10 +69,9 @@ router.get("/", async (req, res: Response) => {
       message: "Error interno del servidor",
     });
   }
-});
+};
 
-// Producto por ID
-router.get("/:id", async (req, res: Response) => {
+export const getProductById = async (req: Request, res: Response) => {
   const { id } = req.params;
   try {
     // Buscar producto por id
@@ -98,5 +94,24 @@ router.get("/:id", async (req, res: Response) => {
       message: "Error interno del servidor",
     });
   }
-});
-export default router;
+};
+
+export const getCheapestProducts = async (req: Request, res: Response) => {
+  try {
+    console.log('first')
+    const top = Number(req.query.top) || 3;
+
+    const availableProducts = await ProductModel.find({ isAvailable: true });
+    console.log(availableProducts);
+    availableProducts.sort((a, b) => a.price - b.price);
+
+    const cheapest = availableProducts.slice(0, top);
+
+    res.json({ data: cheapest });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      error: "Error interno del servidor",
+    });
+  }
+};

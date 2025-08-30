@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { ProductCard } from "@/components/ProductCard";
-import { getProducts } from "@/lib/api";
+import { getCheapestProducts, getProducts } from "@/lib/api";
 import { Product, ProductQueryParams } from "@/shared/types";
 import { ProductCardSkeleton } from "@/components/ProductCardSkeleton";
 import { Header } from "@/components/Header";
@@ -14,6 +14,7 @@ export default function ProductsPage() {
   const searchParams = useSearchParams();
 
   const [products, setProducts] = useState<Product[] | []>([]);
+  const [cheapest, setCheapest] = useState<Product[] | []>([]);
   const [loading, setLoading] = useState(true);
   const [pages, setPages] = useState(0);
   const [limit, setLimit] = useState(10);
@@ -46,6 +47,19 @@ export default function ProductsPage() {
     fetchProducts();
   }, [searchParams]);
 
+  useEffect(() => {
+    const fetchCheapest = async () => {
+      try {
+        const result = await getCheapestProducts();
+        setCheapest(result.data);
+      } catch (error) {
+        console.error("Failed to fetch cheapest products:", error);
+      }
+    };
+
+    fetchCheapest();
+  }, []);
+
   return (
     <>
       <section className="w-full flex flex-col grow-1 gap-8">
@@ -53,6 +67,21 @@ export default function ProductsPage() {
           <Header title="All Products" />
           <Filters />
         </div>
+        <div className="my-8">
+          <h2 className="text-xl font-bold">
+            Los 3 productos más baratos disponibles
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {cheapest.length > 0 ? (
+              cheapest.map((product) => (
+                <ProductCard imgHeight={80} imgWidht={100} className="h-[300px]" key={product.id} products={product} />
+              ))
+            ) : (
+              <p>No hay productos disponibles.</p>
+            )}
+          </div>
+        </div>
+        <div className="w-full h-[1px] bg-zinc-200 rounded-md"/>
         <div className="w-full py-2 grid grid-responsive cursor-pointer gap-[16px]">
           {loading ? (
             new Array(8)

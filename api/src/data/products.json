@@ -10,5 +10,5 @@
   { "name": "Bolsa de Gimnasio", "price": 55.0, "isAvailable": true, "category": "bag", "image": "https://0iw7abmji4.ufs.sh/f/iPYIoBQP0AEvGGhylMXSCsFHOVuXqZDcLm4fdANb95RpI1vh" },
   {  "name": "Casco de Béisbol", "price": 110.0, "isAvailable": false, "category": "headgear", "image": "https://0iw7abmji4.ufs.sh/f/iPYIoBQP0AEvON6VG57ypGR4qbL0Nidn5lDPtBIgSAZcfThW" },
   {  "name": "Guantes de Portero", "price": 65.0, "isAvailable": true, "category": "gloves", "image": "https://0iw7abmji4.ufs.sh/f/iPYIoBQP0AEvBSF9TcE9NH8X6mbfwQCe0I3JyxZjBk7YiPWo" },
-  {  "name": "Bolsa de Viaje Pro", "price": 150.0, "isAvailable": true, "category": "bag", "image": "URL_UPLOADTHING_PRODUCTO_12" }
+  {  "name": "Bolsa de Viaje Pro", "price": 150.0, "isAvailable": true, "category": "bag", "image": "https://0iw7abmji4.ufs.sh/f/iPYIoBQP0AEvC8ImxvzDNXSJTbPpdzt3qBVlHAaIUnZCr5EO" }
 ]
